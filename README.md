@@ -29,3 +29,6 @@
 - Vite
 - Tailwind CSS
 - SCSS
+
+## OpenMeteo API
+- https://open-meteo.com/en/docs
