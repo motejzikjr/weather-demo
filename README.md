@@ -23,4 +23,4 @@
 - TypeScript
 - Vite
 - Tailwind CSS
-- Less
+- SCSS
