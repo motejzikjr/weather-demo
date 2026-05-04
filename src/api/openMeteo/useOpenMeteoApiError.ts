@@ -1,4 +1,4 @@
-export class OpenMeteoApiError extends Error {
+export class UseOpenMeteoApiError extends Error {
     constructor(
         public readonly status: number,
         message: string,
