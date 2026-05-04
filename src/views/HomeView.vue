@@ -1,9 +1,9 @@
 <template>
-    <main class="p-8">
-        <h1 class="text-2xl font-bold">Weather Demo</h1>
+    <main>
+        <Floor :variant="FloorVariant.PRIMARY">
+            <h1 class="text-2xl font-bold">Weather Demo</h1>
+        </Floor>
         <WeatherTemplate />
-        <Floor :variant="FloorVariant.PRIMARY"> PRIMARY </Floor>
-        <Floor :variant="FloorVariant.SECONDARY"> SECONDARY </Floor>
     </main>
 </template>
 

@@ -1,19 +1,20 @@
 <template>
     <Floor
         v-if="data"
-        :variant="FloorVariant.PRIMARY"
+        :variant="FloorVariant.SECONDARY"
     >
-        {{ data.current.temperature }}
+        <CurrentWeatherCard :current="data.current" />
     </Floor>
 </template>
 
 <script setup lang="ts">
-    import Floor from '~/ui/Floor/Floor.vue'
-    import { FloorVariant } from '~/ui/Floor/FloorVariant'
+    import { onMounted, ref } from 'vue'
     import { useGetWeather } from '~/modules/weather/services/useGetWeather'
+    import Floor from '~/ui/Floor/Floor.vue'
+    import CurrentWeatherCard from '~/ui/CurrentWeatherCard/CurrentWeatherCard.vue'
+    import { FloorVariant } from '~/ui/Floor/FloorVariant'
     import { CurrentWeather } from '~/modules/weather/types/CurrentWeather'
     import { DailyForecast } from '~/modules/weather/types/DailyForecast'
-    import { onMounted, ref } from 'vue'
 
     type WeatherData = {
         current: CurrentWeather
