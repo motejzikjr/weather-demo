@@ -1,0 +1,25 @@
+@import '~/styles/settings/spacing';
+
+.spacing-vertical-primary {
+    @include spacing-vertical-primary;
+}
+
+.spacing-vertical-secondary {
+    @include spacing-vertical-secondary;
+}
+
+.spacing-horizontal-primary {
+    @include spacing-horizontal-primary;
+}
+
+.spacing-horizontal-secondary {
+    @include spacing-horizontal-secondary;
+}
+
+.spacing-inset-primary {
+    @include spacing-inset-primary;
+}
+
+.spacing-inset-secondary {
+    @include spacing-inset-secondary;
+}
