@@ -32,6 +32,7 @@
 <script setup lang="ts">
     import { onMounted, ref, watch } from 'vue'
     import { useGetWeather } from '~/modules/weather/services/useGetWeather'
+    import { useWeatherStore } from '~/stores/useWeatherStore'
     import Floor from '~/ui/Floor/Floor.vue'
     import CurrentWeatherCard from '~/ui/CurrentWeatherCard/CurrentWeatherCard.vue'
     import ForecastChart from '~/ui/ForecastChart/ForecastChart.vue'
@@ -56,6 +57,7 @@
     ]
 
     const getWeather = useGetWeather()
+    const weatherStore = useWeatherStore()
     const data = ref<WeatherData | undefined>(undefined)
     const currentCity = ref<City | undefined>(undefined)
 
@@ -70,5 +72,6 @@
     watch(currentCity, async (newCurrentCity) => {
         if (!newCurrentCity) return
         data.value = await getWeather(newCurrentCity.coordinates)
+        weatherStore.setWeather(newCurrentCity.name, data.value.current.temperature)
     })
 </script>
