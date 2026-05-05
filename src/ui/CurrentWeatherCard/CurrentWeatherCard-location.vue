@@ -1,7 +1,7 @@
 <template>
     <div class="CurrentWeatherCard-location">
         <span class="CurrentWeatherCard-label pr-2">Lokalita:</span>
-        <span class="CurrentWeatherCard-value font-bold">Praha</span>
+        <span class="CurrentWeatherCard-value font-bold">{{ location }}</span>
     </div>
 </template>
 

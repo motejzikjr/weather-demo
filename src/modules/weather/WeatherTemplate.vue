@@ -4,13 +4,23 @@
         :variant="FloorVariant.SECONDARY"
     >
         <div class="flex gap-2">
-            <Button :variant="ButtonVariant.PRIMARY">Praha</Button>
-            <Button :variant="ButtonVariant.PRIMARY">Sidney</Button>
-            <Button :variant="ButtonVariant.SECONDARY">New York</Button>
+            <Button
+                v-for="(city, index) in cities"
+                :key="index"
+                :variant="city.name === currentCity?.name ? ButtonVariant.PRIMARY : ButtonVariant.SECONDARY"
+                @click="onClick(city)"
+            >
+                {{ city.name }}
+            </Button>
         </div>
 
-        <CurrentWeatherCard :current="data.current" />
+        <CurrentWeatherCard
+            v-if="currentCity && data"
+            :current="data.current"
+            :location="currentCity?.name"
+        />
     </Floor>
+
     <Floor
         v-if="data"
         :variant="FloorVariant.PRIMARY"
@@ -20,26 +30,43 @@
 </template>
 
 <script setup lang="ts">
-    import { onMounted, ref } from 'vue'
+    import { onMounted, ref, watch } from 'vue'
     import { useGetWeather } from '~/modules/weather/services/useGetWeather'
     import Floor from '~/ui/Floor/Floor.vue'
     import CurrentWeatherCard from '~/ui/CurrentWeatherCard/CurrentWeatherCard.vue'
     import ForecastChart from '~/ui/ForecastChart/ForecastChart.vue'
+    import Button from '~/ui/Button/Button.vue'
     import { FloorVariant } from '~/ui/Floor/FloorVariant'
     import { CurrentWeather } from '~/modules/weather/types/CurrentWeather'
     import { DailyForecast } from '~/modules/weather/types/DailyForecast'
-    import Button from '~/ui/Button/Button.vue'
     import { ButtonVariant } from '~/ui/Button/ButtonVariant'
+    import { City } from '~/modules/weather/types/City'
 
     type WeatherData = {
         current: CurrentWeather
         forecast: DailyForecast[]
     }
 
+    const cities: City[] = [
+        { name: 'Praha', coordinates: { lat: 50.08, lon: 14.42 } },
+        { name: 'Sidney', coordinates: { lat: 33.86, lon: 151.2 } },
+        { name: 'New York', coordinates: { lat: 40.71, lon: 74.0 } },
+    ]
+
     const getWeather = useGetWeather()
     const data = ref<WeatherData | undefined>(undefined)
+    const currentCity = ref<City | undefined>(undefined)
+
+    const onClick = (value: City) => {
+        currentCity.value = value
+    }
 
     onMounted(async () => {
-        data.value = await getWeather()
+        currentCity.value = cities[0]
+    })
+
+    watch(currentCity, async (newCurrentCity) => {
+        if (!newCurrentCity) return
+        data.value = await getWeather(newCurrentCity.coordinates)
     })
 </script>

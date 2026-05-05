@@ -31,4 +31,5 @@
 - SCSS
 
 ## OpenMeteo API
+
 - https://open-meteo.com/en/docs
