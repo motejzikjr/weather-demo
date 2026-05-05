@@ -51,6 +51,8 @@
         { name: 'Praha', coordinates: { lat: 50.08, lon: 14.42 } },
         { name: 'Sidney', coordinates: { lat: 33.86, lon: 151.2 } },
         { name: 'New York', coordinates: { lat: 40.71, lon: 74.0 } },
+        { name: 'Longyearbyen', coordinates: { lat: 78.22, lon: 15.64 } },
+        { name: 'Jakarta', coordinates: { lat: 6.17, lon: 106.82 } },
     ]
 
     const getWeather = useGetWeather()
