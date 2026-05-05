@@ -3,14 +3,15 @@
         class="Floor"
         :class="variant"
     >
-        <div class="Floor-container">
+        <FloorContainer v-bind="$props">
             <slot></slot>
-        </div>
+        </FloorContainer>
     </div>
 </template>
 
 <script setup lang="ts">
     import FloorProps from '~/ui/Floor/FloorProps'
+    import FloorContainer from '~/ui/Floor/Floor-container.vue'
 
     defineProps<FloorProps>()
 </script>
