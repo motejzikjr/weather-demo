@@ -3,6 +3,12 @@
         v-if="data"
         :variant="FloorVariant.SECONDARY"
     >
+        <div class="flex gap-2">
+            <Button :variant="ButtonVariant.PRIMARY">Praha</Button>
+            <Button :variant="ButtonVariant.PRIMARY">Sidney</Button>
+            <Button :variant="ButtonVariant.SECONDARY">New York</Button>
+        </div>
+
         <CurrentWeatherCard :current="data.current" />
     </Floor>
     <Floor
@@ -22,6 +28,8 @@
     import { FloorVariant } from '~/ui/Floor/FloorVariant'
     import { CurrentWeather } from '~/modules/weather/types/CurrentWeather'
     import { DailyForecast } from '~/modules/weather/types/DailyForecast'
+    import Button from '~/ui/Button/Button.vue'
+    import { ButtonVariant } from '~/ui/Button/ButtonVariant'
 
     type WeatherData = {
         current: CurrentWeather

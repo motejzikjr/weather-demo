@@ -1,0 +1,5 @@
+@import '~/styles/settings/typography';
+
+.typo-link-large {
+    @include typo-link-large;
+}
