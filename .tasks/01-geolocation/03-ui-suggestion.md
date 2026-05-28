@@ -1,0 +1,47 @@
+# UI: Autocomplete
+
+## Cíl
+
+Autocomplete komponenta skládající se z textového inputu a rozbalovacího seznamu návrhů. Routing-agnostic — komunikuje výhradně přes props a emity.
+
+## Struktura souborů
+
+```
+src/ui/Autocomplete/
+  Autocomplete.vue        # Hlavní komponenta — skládá Input + List
+  Autocomplete.scss
+  AutocompleteList.vue    # Rozbalovací seznam položek
+  AutocompleteItem.vue    # Jedna položka seznamu
+```
+
+## Typy / Props / Vzor
+
+```ts
+// Autocomplete.vue
+defineProps<{
+  value: string
+  placeholder?: string
+  items: { name: string; value: string }[]
+}>()
+defineEmits<{
+  (e: 'change', value: string): void
+  (e: 'select', value: string): void
+}>()
+```
+
+## Akceptační kritéria
+
+### Struktura
+- [ ] Všechny 3 soubory (`Autocomplete.vue`, `AutocompleteList.vue`, `AutocompleteItem.vue`) existují
+- [ ] `Autocomplete.vue` skládá pouze sub-komponenty, neobsahuje přímou HTML logiku listu
+- [ ] `AutocompleteList.vue` renderuje `AutocompleteItem` pro každou položku
+- [ ] `AutocompleteItem.vue` emituje `select` při kliknutí
+
+### Chování
+- [ ] List se zobrazí pouze pokud `items.length > 0`
+- [ ] Výběr položky emituje `select` s hodnotou `item.value`
+- [ ] Psaní do inputu emituje `change` s aktuální hodnotou
+
+### Konvence
+- [ ] Žádný `useRouter` ani routing logika
+- [ ] BEM CSS třídy (`.Autocomplete`, `.Autocomplete-list`, `.Autocomplete-item`)
