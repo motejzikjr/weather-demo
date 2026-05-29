@@ -34,31 +34,20 @@ export const toXxxData = (data: ApiResponse): DomainType[] => {
 }
 ```
 
-## Composable (service)
+## Service
+
+Service je **bezstavová** factory funkce — vrací async funkci, která fetchuje a mapuje data. Reaktivní stav (`ref`, `isLoading`, `error`) vlastní volající komponenta nebo view, ne service.
 
 ```ts
-export const useXxx = (param: Ref<string> | string) => {
-  const data = ref<Type | null>(null)
-  const isLoading = ref(true)
-  const error = ref<Error | null>(null)
+export const useXxx = () => {
+  const api = useOpenMeteoApi()
+  const store = useXxxStore()
 
-  const fetchData = async () => {
-    isLoading.value = true
-    error.value = null
-    try {
-      const api = useOpenMeteoApi()
-      const response = await api.get<ApiResponse>(endpoint, params)
-      data.value = toXxxData(response)
-    } catch (err) {
-      if (err instanceof Error) error.value = err
-    } finally {
-      isLoading.value = false
-    }
+  return async (param: string) => {
+    const { field } = store.value
+    const response = await api.get<ApiResponse>(endpoint, { field, param })
+    return toXxxData(response)
   }
-
-  onMounted(() => fetchData())
-
-  return { data, isLoading, error, fetchData }
 }
 ```
 

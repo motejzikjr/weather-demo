@@ -19,9 +19,10 @@
     import { GeocodingSuggestion } from '~/modules/geolocation/types/GeocodingSuggestion'
 
     const store = useGeolocationStore()
-    const { suggestions, search } = useGeolocationSearch()
+    const search = useGeolocationSearch()
 
     const query = ref('')
+    const suggestions = ref<GeocodingSuggestion[]>([])
     let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
     const items = computed(() =>
@@ -31,10 +32,12 @@
         })),
     )
 
-    const onInputChange = (value: string) => {
+    const onInputChange = async (value: string) => {
         query.value = value
         if (debounceTimer) clearTimeout(debounceTimer)
-        debounceTimer = setTimeout(() => search(value), 300)
+        debounceTimer = setTimeout(async () => {
+            suggestions.value = await search(value)
+        }, 300)
     }
 
     const onSelect = (value: string) => {
