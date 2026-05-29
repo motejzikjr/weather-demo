@@ -51,18 +51,18 @@ export const useGeocodingApi = () => { /* stejná struktura jako useOpenMeteoApi
 ## Akceptační kritéria
 
 ### Typy
-- [ ] `GeocodingResponse` má pole `results` jako optional array s optional string/number poli
-- [ ] `GeocodingSuggestion` má `name`, `country`, `latitude`, `longitude` (vše required)
+- [x] `GeocodingResponse` má pole `results` jako optional array s optional string/number poli
+- [x] `GeocodingSuggestion` má `name`, `country`, `latitude`, `longitude` (vše required)
 
 ### Mapper
-- [ ] `toGeocodingSuggestions(data: GeocodingResponse): GeocodingSuggestion[]`
-- [ ] Filtruje záznamy kde chybí povinná pole (name, country, latitude, longitude)
+- [x] `toGeocodingSuggestions(data: GeocodingResponse): GeocodingSuggestion[]`
+- [x] Filtruje záznamy kde chybí povinná pole (name, country, latitude, longitude)
 
 ### Composable
-- [ ] `useGeolocationSearch()` vrací `{ suggestions, isLoading, error, search }`
-- [ ] `search(query: string)` volá geocoding API s `name`, `count: 10`, `language: 'en'`, `format: 'json'`
-- [ ] Při chybě nastaví `error` a vyčistí `suggestions`
+- [x] `useGeolocationSearch()` vrací `{ suggestions, isLoading, error, search }`
+- [x] `search(query: string)` volá geocoding API s `name`, `count: 10`, `language: 'en'`, `format: 'json'`
+- [x] Při chybě nastaví `error` a vyčistí `suggestions`
 
 ### API
-- [ ] `useGeocodingApi` v `useOpenMeteoApi.ts` používá `https://geocoding-api.open-meteo.com/v1`
-- [ ] TypeScript: `npm run typecheck` prochází bez chyb
+- [x] `useGeocodingApi` v `useOpenMeteoApi.ts` používá `https://geocoding-api.open-meteo.com/v1`
+- [x] TypeScript: `npm run typecheck` prochází bez chyb

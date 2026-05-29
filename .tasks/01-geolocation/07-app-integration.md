@@ -15,20 +15,20 @@ src/modules/weather/repositories/
 ## Akceptační kritéria
 
 ### WeatherTemplate
-- [ ] Tlačítka s hardcoded městy jsou odstraněna
-- [ ] `GeolocationSearch` je přidán do horního `<Floor>`
-- [ ] Weather se automaticky refetchuje když se změní `location` v geolocationStore
+- [x] Tlačítka s hardcoded městy jsou odstraněna
+- [x] `GeolocationSearch` je přidán do horního `<Floor>`
+- [x] Weather se automaticky refetchuje když se změní `location` v geolocationStore
   - Implementace: `watch(location, fetchWeather, { immediate: true })`
 
 ### Weather fetching
-- [ ] `useGetWeather` nebo `useFetchWeather` čte koordináty z `useGeolocationStore` místo přijímání parametru
-- [ ] Stávající chování (Praha jako default) je zachováno díky default hodnotě ve store
+- [x] `useGetWeather` nebo `useFetchWeather` čte koordináty z `useGeolocationStore` místo přijímání parametru
+- [x] Stávající chování (Praha jako default) je zachováno díky default hodnotě ve store
 
 ### Chování aplikace
-- [ ] Při otevření aplikace se zobrazí počasí pro Prahu
-- [ ] Vyhledání a výběr jiného města aktualizuje počasí
-- [ ] `useWeatherStore` stále dostává aktuální teplotu a název města
+- [x] Při otevření aplikace se zobrazí počasí pro Prahu
+- [x] Vyhledání a výběr jiného města aktualizuje počasí
+- [x] `useWeatherStore` stále dostává aktuální teplotu a název města
 
 ### Konvence
-- [ ] TypeScript: `npm run typecheck` prochází bez chyb
-- [ ] `npm run lint` prochází bez chyb
+- [x] TypeScript: `npm run typecheck` prochází bez chyb
+- [x] `npm run lint` prochází bez chyb

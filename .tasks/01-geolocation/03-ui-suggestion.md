@@ -32,16 +32,16 @@ defineEmits<{
 ## Akceptační kritéria
 
 ### Struktura
-- [ ] Všechny 3 soubory (`Autocomplete.vue`, `AutocompleteList.vue`, `AutocompleteItem.vue`) existují
-- [ ] `Autocomplete.vue` skládá pouze sub-komponenty, neobsahuje přímou HTML logiku listu
-- [ ] `AutocompleteList.vue` renderuje `AutocompleteItem` pro každou položku
-- [ ] `AutocompleteItem.vue` emituje `select` při kliknutí
+- [x] Všechny 3 soubory (`Autocomplete.vue`, `AutocompleteList.vue`, `AutocompleteItem.vue`) existují
+- [x] `Autocomplete.vue` skládá pouze sub-komponenty, neobsahuje přímou HTML logiku listu
+- [x] `AutocompleteList.vue` renderuje `AutocompleteItem` pro každou položku
+- [x] `AutocompleteItem.vue` emituje `select` při kliknutí
 
 ### Chování
-- [ ] List se zobrazí pouze pokud `items.length > 0`
-- [ ] Výběr položky emituje `select` s hodnotou `item.value`
-- [ ] Psaní do inputu emituje `change` s aktuální hodnotou
+- [x] List se zobrazí pouze pokud `items.length > 0`
+- [x] Výběr položky emituje `select` s hodnotou `item.value`
+- [x] Psaní do inputu emituje `change` s aktuální hodnotou
 
 ### Konvence
-- [ ] Žádný `useRouter` ani routing logika
-- [ ] BEM CSS třídy (`.Autocomplete`, `.Autocomplete-list`, `.Autocomplete-item`)
+- [x] Žádný `useRouter` ani routing logika
+- [x] BEM CSS třídy (`.Autocomplete`, `.Autocomplete-list`, `.Autocomplete-item`)

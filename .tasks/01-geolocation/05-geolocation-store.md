@@ -25,14 +25,14 @@ const DEFAULT_LOCATION: GeocodingSuggestion = {
 ## Akceptační kritéria
 
 ### Struktura
-- [ ] `useGeolocationStore` je Pinia store (defineStore composition API)
-- [ ] Exportuje `location` (ref) a `setLocation(loc: GeocodingSuggestion)` 
-- [ ] Default hodnota je Praha (lat: 50.08, lon: 14.42)
+- [x] `useGeolocationStore` je Pinia store (defineStore composition API)
+- [x] Exportuje `location` (ref) a `setLocation(loc: GeocodingSuggestion)` 
+- [x] Default hodnota je Praha (lat: 50.08, lon: 14.42)
 
 ### Chování
-- [ ] `setLocation` aktualizuje `location.value`
-- [ ] Store je reaktivní — změna v jedné komponentě se propaguje do všech odběratelů
+- [x] `setLocation` aktualizuje `location.value`
+- [x] Store je reaktivní — změna v jedné komponentě se propaguje do všech odběratelů
 
 ### Konvence
-- [ ] Žádné default exporty (použít pojmenovaný export)
-- [ ] TypeScript: `npm run typecheck` prochází bez chyb
+- [x] Žádné default exporty (použít pojmenovaný export)
+- [x] TypeScript: `npm run typecheck` prochází bez chyb

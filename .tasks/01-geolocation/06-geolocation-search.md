@@ -14,17 +14,17 @@ src/modules/geolocation/
 ## Akceptační kritéria
 
 ### Struktura
-- [ ] Používá `Autocomplete` z `src/ui/Autocomplete/`
-- [ ] Importuje `useGeolocationSearch` a `useGeolocationStore`
-- [ ] Je v `src/modules/geolocation/` (ne v `src/ui/` — je napojená na store)
+- [x] Používá `Autocomplete` z `src/ui/Autocomplete/`
+- [x] Importuje `useGeolocationSearch` a `useGeolocationStore`
+- [x] Je v `src/modules/geolocation/` (ne v `src/ui/` — je napojená na store)
 
 ### Chování
-- [ ] Psaní do inputu spustí `search(query)` po 300ms debounce
-- [ ] Výběr položky zavolá `setLocation` a vyčistí input
-- [ ] Zobrazuje aktuálně vybrané místo: `location.name, location.country`
-- [ ] Suggestions jsou namapovány na `{ name: 'Praha, Czechia', value: JSON.stringify(suggestion) }`
+- [x] Psaní do inputu spustí `search(query)` po 300ms debounce
+- [x] Výběr položky zavolá `setLocation` a vyčistí input
+- [x] Zobrazuje aktuálně vybrané místo: `location.name, location.country`
+- [x] Suggestions jsou namapovány na `{ name: 'Praha, Czechia', value: JSON.stringify(suggestion) }`
 
 ### Konvence
-- [ ] `<script setup lang="ts">` 
-- [ ] Debounce implementován přes `setTimeout` + `onUnmounted` cleanup
-- [ ] TypeScript: `npm run typecheck` prochází bez chyb
+- [x] `<script setup lang="ts">` 
+- [x] Debounce implementován přes `setTimeout` + `onUnmounted` cleanup
+- [x] TypeScript: `npm run typecheck` prochází bez chyb
