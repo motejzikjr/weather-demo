@@ -1,0 +1,19 @@
+.InputText {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 2px solid rgb(100 116 139);
+    border-radius: 0.5rem;
+    background-color: rgb(15 23 42);
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    outline: none;
+
+    &::placeholder {
+        color: rgb(148 163 184);
+    }
+
+    &:focus {
+        border-color: rgb(35 173 231);
+    }
+}
