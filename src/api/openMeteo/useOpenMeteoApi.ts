@@ -1,11 +1,12 @@
 import { UseOpenMeteoApiError } from '~/api/openMeteo/useOpenMeteoApiError'
 
-const BASE_URL = 'https://api.open-meteo.com/v1'
+const WEATHER_BASE_URL = 'https://api.open-meteo.com/v1'
+const GEOCODING_BASE_URL = 'https://geocoding-api.open-meteo.com/v1'
 
 type Params = Record<string, string | number | boolean | string[]>
 
-const buildUrl = (endpoint: string, params?: Params): string => {
-    const url = new URL(`${BASE_URL}${endpoint}`)
+const buildUrl = (baseUrl: string, endpoint: string, params?: Params): string => {
+    const url = new URL(`${baseUrl}${endpoint}`)
 
     if (params) {
         for (const [key, value] of Object.entries(params)) {
@@ -20,7 +21,7 @@ const buildUrl = (endpoint: string, params?: Params): string => {
     return url.toString()
 }
 
-export const useOpenMeteoApi = () => {
+const createApi = (baseUrl: string) => {
     const _fetch = async <T = unknown>(url: string): Promise<T> => {
         const response = await fetch(url)
 
@@ -41,8 +42,12 @@ export const useOpenMeteoApi = () => {
     }
 
     const get = async <Res = unknown>(endpoint: string, params?: Params) => {
-        return _fetch<Res>(buildUrl(endpoint, params))
+        return _fetch<Res>(buildUrl(baseUrl, endpoint, params))
     }
 
     return { get }
 }
+
+export const useOpenMeteoApi = () => createApi(WEATHER_BASE_URL)
+
+export const useGeocodingApi = () => createApi(GEOCODING_BASE_URL)
