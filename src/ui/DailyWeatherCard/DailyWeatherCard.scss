@@ -1,0 +1,22 @@
+.DailyWeatherCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.DailyWeatherCard-date {
+    font-weight: bold;
+}
+
+.DailyWeatherCard-icon {
+    font-size: 2rem;
+}
+
+.DailyWeatherCard-temperature {
+    font-size: 0.875rem;
+}
+
+.DailyWeatherCard-button {
+    cursor: pointer;
+}

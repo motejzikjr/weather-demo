@@ -6,20 +6,12 @@ disable-model-invocation: true
 
 # Process task: $ARGUMENTS
 
-## Obsah tasku
-
-!`python3 -c "import sys; path = sys.argv[1].lstrip('@'); print(open(path).read())" $ARGUMENTS`
-
-## Existující soubory v relevantních adresářích
-
-!`find src/ui src/modules -type f | sort`
-
 ## Instrukce
 
 Postupuj v tomto pořadí:
 
-### 1. Pochop zadání
-Přečti `## Cíl` a `## Akceptační kritéria`. Pokud zadání odkazuje na jiné tasky jako závislosti, ověř že existují (`find src/`).
+### 1. Přečti task soubor
+Pomocí nástroje Read přečti task soubor na cestě `$ARGUMENTS` (odstraň úvodní `@` pokud je přítomno). Pak projdi `## Cíl` a `## Akceptační kritéria`. Pokud zadání odkazuje na jiné tasky jako závislosti, ověř že existují (`find src/`).
 
 ### 2. Implementuj
 Implementuj feature podle akceptačních kritérií. Dodržuj konvence projektu z pravidel (`<script setup lang="ts">`, arrow funkce, BEM naming, atd.). Props UI komponent definuj v separátním souboru `ComponentNameProps.ts` a importuj přes `defineProps<ComponentNameProps>()`.
