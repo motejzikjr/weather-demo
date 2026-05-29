@@ -13,6 +13,7 @@ Komponenty v `src/ui/` jsou izolované, znovupoužitelné a routing-agnostic.
 ComponentName/
   ComponentName.vue          # Hlavní komponenta — skládá sub-komponenty
   ComponentName.scss         # Styly (pokud potřeba)
+  ComponentNameProps.ts      # Props interface (export default)
   ComponentNameLabel.vue     # Sub-komponenta — jeden logický HTML uzel
   ComponentNameButton.vue    # Sub-komponenta — jeden logický HTML uzel
 ```
@@ -36,15 +37,24 @@ Výsledkem jsou malé, dobře čitelné soubory — každý řeší jednu věc.
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  value: string
-  onAction?: () => void
-}>()
+import ComponentNameProps from '~/ui/ComponentName/ComponentNameProps'
+
+defineProps<ComponentNameProps>()
 </script>
 ```
 
+```ts
+// ComponentNameProps.ts
+interface ComponentNameProps {
+  value: string
+  onAction?: () => void
+}
+
+export default ComponentNameProps
+```
+
 - `<script setup lang="ts">` vždy
-- Props interface inline přes `defineProps<{ ... }>()`
+- Props definuj v separátním souboru `ComponentNameProps.ts`, importuj přes `defineProps<ComponentNameProps>()`
 - Nikdy `useRouter` — přijmi `onClick` / `onDetail` callback z rodiče
 - Emity: `defineEmits<{ (e: 'action'): void }>()`
 

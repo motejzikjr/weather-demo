@@ -22,7 +22,7 @@ Postupuj v tomto pořadí:
 Přečti `## Cíl` a `## Akceptační kritéria`. Pokud zadání odkazuje na jiné tasky jako závislosti, ověř že existují (`find src/`).
 
 ### 2. Implementuj
-Implementuj feature podle akceptačních kritérií. Dodržuj konvence projektu z pravidel (`<script setup lang="ts">`, arrow funkce, inline defineProps, BEM naming, atd.).
+Implementuj feature podle akceptačních kritérií. Dodržuj konvence projektu z pravidel (`<script setup lang="ts">`, arrow funkce, BEM naming, atd.). Props UI komponent definuj v separátním souboru `ComponentNameProps.ts` a importuj přes `defineProps<ComponentNameProps>()`.
 
 ### 3. Zkontroluj TypeScript a lint
 Spusť `npm run typecheck` a `npm run lint`. Oprav všechny chyby před pokračováním.
