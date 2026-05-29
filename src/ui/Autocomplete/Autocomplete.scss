@@ -1,0 +1,31 @@
+.Autocomplete {
+    position: relative;
+    width: 100%;
+}
+
+.Autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 0.25rem;
+    padding: 0.25rem 0;
+    list-style: none;
+    background-color: rgb(15 23 42);
+    border: 2px solid rgb(35 173 231);
+    border-radius: 0.5rem;
+    z-index: 10;
+    max-height: 16rem;
+    overflow-y: auto;
+}
+
+.Autocomplete-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background-color: rgb(35 173 231 / 20%);
+    }
+}
