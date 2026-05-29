@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 ## Obsah tasku
 
-!`cat $ARGUMENTS`
+!`python3 -c "import sys; path = sys.argv[1].lstrip('@'); print(open(path).read())" $ARGUMENTS`
 
 ## Existující soubory v relevantních adresářích
 
