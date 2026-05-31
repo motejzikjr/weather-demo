@@ -1,4 +1,4 @@
-import { MinutelyResponse } from '~/modules/weather/types/MinutelyResponse'
+import { MinutelyResponse } from '~/api/openMeteo/types/MinutelyResponse'
 import { TemperatureChartPoint } from '~/modules/weather/types/TemperatureChartPoint'
 
 export const toTemperatureChart = (data: MinutelyResponse): TemperatureChartPoint[] => {

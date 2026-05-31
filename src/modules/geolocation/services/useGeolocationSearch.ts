@@ -1,5 +1,5 @@
 import { useGeocodingApi } from '~/api/openMeteo/useOpenMeteoApi'
-import { GeocodingResponse } from '~/modules/geolocation/types/GeocodingResponse'
+import { GeocodingResponse } from '~/api/openMeteo/types/GeocodingResponse'
 import { toGeocodingSuggestions } from '~/modules/geolocation/mappers/toGeocodingSuggestions'
 
 export const useGeolocationSearch = () => {

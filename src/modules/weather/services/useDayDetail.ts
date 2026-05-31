@@ -3,7 +3,7 @@ import { useGeolocationStore } from '~/modules/geolocation/stores/useGeolocation
 import { toMinutelySummary } from '~/modules/weather/mappers/toMinutelySummary'
 import { toTemperatureChart } from '~/modules/weather/mappers/toTemperatureChart'
 import { toPrecipitationChart } from '~/modules/weather/mappers/toPrecipitationChart'
-import type { MinutelyResponse } from '~/modules/weather/types/MinutelyResponse'
+import type { MinutelyResponse } from '~/api/openMeteo/types/MinutelyResponse'
 
 export const useDayDetail = () => {
     const api = useOpenMeteoApi()

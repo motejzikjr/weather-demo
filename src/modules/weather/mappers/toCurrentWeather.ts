@@ -1,4 +1,4 @@
-import { WeatherResponse } from '~/api/openMeteo/WeatherResponse'
+import { WeatherResponse } from '~/api/openMeteo/types/WeatherResponse'
 import { CurrentWeather } from '~/modules/weather/types/CurrentWeather'
 
 export const toCurrentWeather = (data: WeatherResponse): CurrentWeather => {

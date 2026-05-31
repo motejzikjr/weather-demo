@@ -1,4 +1,4 @@
-import { WeatherResponse } from '~/api/openMeteo/WeatherResponse'
+import { WeatherResponse } from '~/api/openMeteo/types/WeatherResponse'
 import { DailyForecast } from '~/modules/weather/types/DailyForecast'
 
 export const toDailyForecast = (data: WeatherResponse): DailyForecast[] => {

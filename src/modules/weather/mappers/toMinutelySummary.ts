@@ -1,4 +1,4 @@
-import { MinutelyResponse } from '~/modules/weather/types/MinutelyResponse'
+import { MinutelyResponse } from '~/api/openMeteo/types/MinutelyResponse'
 import { MinutelySummary } from '~/modules/weather/types/MinutelySummary'
 
 export const toMinutelySummary = (data: MinutelyResponse): MinutelySummary => {

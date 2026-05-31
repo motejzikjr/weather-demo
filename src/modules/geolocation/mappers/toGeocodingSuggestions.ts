@@ -1,4 +1,4 @@
-import { GeocodingResponse } from '~/modules/geolocation/types/GeocodingResponse'
+import { GeocodingResponse } from '~/api/openMeteo/types/GeocodingResponse'
 import { GeocodingSuggestion } from '~/modules/geolocation/types/GeocodingSuggestion'
 
 export const toGeocodingSuggestions = (data: GeocodingResponse): GeocodingSuggestion[] => {

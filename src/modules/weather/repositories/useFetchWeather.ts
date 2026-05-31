@@ -1,5 +1,5 @@
 import { useOpenMeteoApi } from '~/api/openMeteo/useOpenMeteoApi'
-import { WeatherResponse } from '~/api/openMeteo/WeatherResponse'
+import { WeatherResponse } from '~/api/openMeteo/types/WeatherResponse'
 
 type Input = {
     latitude: number
