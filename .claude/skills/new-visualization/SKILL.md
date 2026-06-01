@@ -32,6 +32,7 @@ Rozšíř existující composable cílové view: nový `ref`, volání mapperu v
 ### 4. UI komponenta (`src/ui/<Název>/`)
 
 Použij `vue3-apexcharts` komponentu `<apexchart>`:
+
 - `width="100%"`, výška 200–300px dle hustoty dat
 - `xaxis.type: 'datetime'` pro časové řady
 - Barvy konzistentní s existujícími grafy: červená `#ef4444`, modrá `#3b82f6`, fialová `#a78bfa`, oranžová `#f97316`

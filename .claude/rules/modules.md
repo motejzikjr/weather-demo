@@ -1,6 +1,6 @@
 ---
 paths:
-  - "src/modules/**"
+    - 'src/modules/**'
 ---
 
 # Moduly
@@ -26,11 +26,11 @@ Všechna pole z API response jsou `optional`. Typ deklaruj pouze pro pole která
 
 ```ts
 export const toXxxData = (data: ApiResponse): DomainType[] => {
-  const { field_a, field_b } = data?.section ?? {}
-  return (field_a ?? []).map((value, i) => ({
-    mappedField: value,
-    otherField: field_b?.[i],
-  }))
+    const { field_a, field_b } = data?.section ?? {}
+    return (field_a ?? []).map((value, i) => ({
+        mappedField: value,
+        otherField: field_b?.[i],
+    }))
 }
 ```
 
@@ -40,14 +40,14 @@ Service je **bezstavová** factory funkce — vrací async funkci, která fetchu
 
 ```ts
 export const useXxx = () => {
-  const api = useOpenMeteoApi()
-  const store = useXxxStore()
+    const api = useOpenMeteoApi()
+    const store = useXxxStore()
 
-  return async (param: string) => {
-    const { field } = store.value
-    const response = await api.get<ApiResponse>(endpoint, { field, param })
-    return toXxxData(response)
-  }
+    return async (param: string) => {
+        const { field } = store.value
+        const response = await api.get<ApiResponse>(endpoint, { field, param })
+        return toXxxData(response)
+    }
 }
 ```
 
@@ -55,8 +55,10 @@ export const useXxx = () => {
 
 ```ts
 export const useXxxStore = defineStore('xxx', () => {
-  const value = ref<Type | null>(null)
-  const setValue = (v: Type) => { value.value = v }
-  return { value, setValue }
+    const value = ref<Type | null>(null)
+    const setValue = (v: Type) => {
+        value.value = v
+    }
+    return { value, setValue }
 })
 ```

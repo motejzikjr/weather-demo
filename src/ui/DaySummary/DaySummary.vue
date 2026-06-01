@@ -1,5 +1,5 @@
 <template>
-    <div class="DaySummary">
+    <div class="DaySummary spacing-inset-primary">
         <DaySummaryWeatherIcon v-bind="$props" />
         <DaySummaryTemperature v-bind="$props" />
         <DaySummaryPrecipitation v-bind="$props" />

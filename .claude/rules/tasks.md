@@ -1,6 +1,6 @@
 ---
 paths:
-  - ".tasks/**"
+    - '.tasks/**'
 ---
 
 # Task soubory
@@ -13,16 +13,20 @@ Každý subtask má tyto sekce:
 # Název tasku
 
 ## Cíl
+
 Co má vzniknout a proč. Jedna až tři věty, žádný postup.
 Architektonická rozhodnutí patří sem, ne do akceptačních kritérií.
 
-## Struktura souborů        ← volitelné
+## Struktura souborů ← volitelné
+
 Nové nebo upravované soubory s krátkým popisem.
 
-## Typy / Props / Vzor      ← volitelné
+## Typy / Props / Vzor ← volitelné
+
 Konkrétní rozhraní nebo kódové vzory pokud jsou součástí zadání.
 
 ## Akceptační kritéria
+
 Checkboxy rozdělené do skupin. Každé kritérium je ověřitelné —
 buď pohledem do kódu (struktura, konvence) nebo spuštěním (chování).
 ```
@@ -33,9 +37,11 @@ buď pohledem do kódu (struktura, konvence) nebo spuštěním (chování).
 # Název feature
 
 ## Cíl
+
 Stručný popis celé feature.
 
 ## Subtasky
+
 - [název](./soubor.md)
 ```
 
@@ -43,6 +49,6 @@ Stručný popis celé feature.
 
 - Název souboru: `<číslo>-<název>.md` (např. `02-ui-input.md`)
 - Číslo určuje pořadí implementace — subtasky jsou na sobě závislé
-- `## Cíl` popisuje *co*, ne *jak* — implementaci řeší Claude podle pravidel projektu
+- `## Cíl` popisuje _co_, ne _jak_ — implementaci řeší Claude podle pravidel projektu
 - Akceptační kritéria používají `- [ ]` checkboxy
 - Kódové ukázky v zadání jsou orientační, ne závazné — Claude dodržuje konvence projektu

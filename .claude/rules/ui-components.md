@@ -1,6 +1,6 @@
 ---
 paths:
-  - "src/ui/**"
+    - 'src/ui/**'
 ---
 
 # UI komponenty
@@ -23,6 +23,7 @@ ComponentName/
 Každý logický celek (řádek, tlačítko, ikona, hodnota) extrahuj do vlastní sub-komponenty. Hlavní komponenta pak jen skládá sub-komponenty dohromady a předává jim props — neobsahuje žádnou vlastní HTML logiku.
 
 Vzor podle `src/ui/CurrentWeatherCard/`:
+
 - `CurrentWeatherCard.vue` — pouze skládá Temperature, WindSpeed, Time
 - `CurrentWeatherCard-temperature.vue` — jeden `<div>` s labelem a hodnotou
 - `CurrentWeatherCard-time.vue` — jeden `<div>` s časem
@@ -33,21 +34,21 @@ Výsledkem jsou malé, dobře čitelné soubory — každý řeší jednu věc.
 
 ```vue
 <template>
-  <div class="ComponentName">{{ value }}</div>
+    <div class="ComponentName">{{ value }}</div>
 </template>
 
 <script setup lang="ts">
-import ComponentNameProps from '~/ui/ComponentName/ComponentNameProps'
+    import ComponentNameProps from '~/ui/ComponentName/ComponentNameProps'
 
-defineProps<ComponentNameProps>()
+    defineProps<ComponentNameProps>()
 </script>
 ```
 
 ```ts
 // ComponentNameProps.ts
 interface ComponentNameProps {
-  value: string
-  onAction?: () => void
+    value: string
+    onAction?: () => void
 }
 
 export default ComponentNameProps
@@ -61,9 +62,12 @@ export default ComponentNameProps
 ## CSS pojmenování (BEM-like)
 
 ```scss
-.ComponentName {}           // root
-.ComponentName-element {}   // potomek
-.ComponentName--modifier {} // varianta
+.ComponentName {
+} // root
+.ComponentName-element {
+} // potomek
+.ComponentName--modifier {
+} // varianta
 ```
 
 ## SCSS
