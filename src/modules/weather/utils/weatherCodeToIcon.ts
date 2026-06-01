@@ -12,7 +12,6 @@ import {
 
 export const weatherCodeToIcon = (code?: number): Component => {
     if (code === undefined) return MdWbCloudy
-
     if (code === 0) return MdWbSunny
     if (code <= 3) return MdWbCloudy
     if (code === 45 || code === 48) return MdFoggy

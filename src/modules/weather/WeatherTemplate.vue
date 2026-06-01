@@ -29,7 +29,7 @@
     import { storeToRefs } from 'pinia'
     import { useRouter } from 'vue-router'
     import { useGetWeather } from '~/modules/weather/services/useGetWeather'
-    import { useWeatherStore } from '~/stores/useWeatherStore'
+    import { useWeatherStore } from '~/modules/weather/stores/useWeatherStore'
     import { useGeolocationStore } from '~/modules/geolocation/stores/useGeolocationStore'
     import GeolocationSearch from '~/modules/geolocation/GeolocationSearch.vue'
     import Floor from '~/ui/Floor/Floor.vue'

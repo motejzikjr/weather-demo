@@ -14,7 +14,7 @@
     import Floor from '~/ui/Floor/Floor.vue'
     import { FloorVariant } from '~/ui/Floor/FloorVariant'
     import WeatherTemplate from '~/modules/weather/WeatherTemplate.vue'
-    import { useWeatherStore } from '~/stores/useWeatherStore'
+    import { useWeatherStore } from '~/modules/weather/stores/useWeatherStore'
 
     const weatherStore = useWeatherStore()
 </script>

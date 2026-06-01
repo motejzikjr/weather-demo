@@ -52,20 +52,18 @@
     const route = useRoute()
     const router = useRouter()
     const getDayDetail = useDayDetail()
-
     const date = route.params.date as string
-
     const summary = ref<MinutelySummary | null>(null)
     const temperatureChart = ref<TemperatureChartPoint[]>([])
     const precipitationChart = ref<PrecipitationChartPoint[]>([])
     const isLoading = ref(false)
     const error = ref<Error | null>(null)
-
     const formattedDate = computed(() => formatDateTime(date))
 
     onMounted(async () => {
         isLoading.value = true
         error.value = null
+
         try {
             const data = await getDayDetail(date)
             summary.value = data.summary
