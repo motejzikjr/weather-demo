@@ -1,3 +1,5 @@
+@use '~/styles/settings/colors' as *;
+
 .Autocomplete {
     position: relative;
     width: 100%;
@@ -11,8 +13,8 @@
     margin-top: 0.25rem;
     padding: 0.25rem 0;
     list-style: none;
-    background-color: rgb(15 23 42);
-    border: 2px solid rgb(35 173 231);
+    background-color: $color-surface;
+    border: 2px solid $color-primary;
     border-radius: 0.5rem;
     z-index: 10;
     max-height: 16rem;
@@ -22,10 +24,10 @@
 .Autocomplete-item {
     padding: 0.5rem 1rem;
     cursor: pointer;
-    color: #fff;
+    color: $color-text;
 
     &:hover,
     &:focus {
-        background-color: rgb(35 173 231 / 20%);
+        background-color: $color-primary-alpha;
     }
 }

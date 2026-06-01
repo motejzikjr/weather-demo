@@ -1,3 +1,5 @@
+@use '~/styles/settings/colors' as *;
+
 .Button {
     display: flex;
     justify-content: center;
@@ -10,24 +12,24 @@
 }
 
 .Button--primary {
-    background-color: rgb(35 173 231);
-    border-color: rgb(35 173 231);
-    color: #fff;
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-text;
 
     &:hover,
     &:focus {
-        background-color: rgb(197 239 241);
-        color: #000;
+        background-color: $color-primary-light;
+        color: $color-text-inverted;
     }
 }
 
 .Button--secondary {
-    background-color: rgb(0 227 150);
-    border-color: rgb(0 227 150);
-    color: #000;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+    color: $color-text-inverted;
 
     &:hover,
     &:focus {
-        background-color: rgb(201 249 233);
+        background-color: $color-secondary-light;
     }
 }

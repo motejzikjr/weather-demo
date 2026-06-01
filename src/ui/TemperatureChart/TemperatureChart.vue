@@ -14,6 +14,7 @@
     import { computed } from 'vue'
     import VueApexCharts from 'vue3-apexcharts'
     import TemperatureChartProps from '~/ui/TemperatureChart/TemperatureChartProps'
+    import { colors } from '~/styles/settings/colors'
 
     const props = defineProps<TemperatureChartProps>()
 
@@ -36,7 +37,7 @@
             type: 'line' as const,
             toolbar: { show: false },
         },
-        colors: ['#ef4444', '#a78bfa'],
+        colors: [colors.chartTemperature, colors.chartApparent],
         stroke: { curve: 'smooth' as const, width: 2 },
         dataLabels: { enabled: false },
         xaxis: {

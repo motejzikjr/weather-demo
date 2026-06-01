@@ -14,6 +14,7 @@
     import { computed } from 'vue'
     import VueApexCharts from 'vue3-apexcharts'
     import PrecipitationChartProps from '~/ui/PrecipitationChart/PrecipitationChartProps'
+    import { colors } from '~/styles/settings/colors'
 
     const props = defineProps<PrecipitationChartProps>()
 
@@ -32,7 +33,7 @@
             type: 'bar' as const,
             toolbar: { show: false },
         },
-        colors: ['#3b82f6'],
+        colors: [colors.chartPrecipitation],
         dataLabels: { enabled: false },
         xaxis: { type: 'datetime' as const },
         yaxis: { labels: { formatter: (val: number) => `${val} mm` } },

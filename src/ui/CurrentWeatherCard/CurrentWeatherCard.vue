@@ -1,7 +1,5 @@
 <template>
-    <div
-        class="CurrentWeatherCard flex flex-col gap-2 spacing-inset-primary border-amber-600 border-2 rounded-lg w-max"
-    >
+    <div class="CurrentWeatherCard flex flex-col gap-2 spacing-inset-primary border-2 rounded-lg w-max">
         <CurrentWeatherCardLocation v-bind="$props" />
         <CurrentWeatherCardTemperature v-bind="$props" />
         <CurrentWeatherCardWindSpeed v-bind="$props" />

@@ -1,19 +1,21 @@
+@use '~/styles/settings/colors' as *;
+
 .InputText {
     width: 100%;
     padding: 0.5rem 1rem;
-    border: 2px solid rgb(100 116 139);
+    border: 2px solid $color-border;
     border-radius: 0.5rem;
-    background-color: rgb(15 23 42);
-    color: #fff;
+    background-color: $color-surface;
+    color: $color-text;
     font-size: 1rem;
     transition: border-color 0.2s ease;
     outline: none;
 
     &::placeholder {
-        color: rgb(148 163 184);
+        color: $color-text-muted;
     }
 
     &:focus {
-        border-color: rgb(35 173 231);
+        border-color: $color-primary;
     }
 }
