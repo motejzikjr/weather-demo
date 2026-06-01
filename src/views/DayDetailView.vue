@@ -1,12 +1,12 @@
 <template>
     <main>
         <Floor :variant="FloorVariant.SECONDARY">
-            <button
-                class="DayDetailView-back"
+            <Button
+                :variant="ButtonVariant.PRIMARY"
                 @click="router.back()"
             >
                 Zpět
-            </button>
+            </Button>
             <h1 class="DayDetailView-title">{{ formattedDate }}</h1>
             <div
                 v-if="isLoading"
@@ -40,6 +40,8 @@
     import { useRoute, useRouter } from 'vue-router'
     import Floor from '~/ui/Floor/Floor.vue'
     import { FloorVariant } from '~/ui/Floor/FloorVariant'
+    import Button from '~/ui/Button/Button.vue'
+    import { ButtonVariant } from '~/ui/Button/ButtonVariant'
     import DaySummary from '~/ui/DaySummary/DaySummary.vue'
     import TemperatureChart from '~/ui/TemperatureChart/TemperatureChart.vue'
     import PrecipitationChart from '~/ui/PrecipitationChart/PrecipitationChart.vue'

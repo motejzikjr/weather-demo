@@ -1,14 +1,16 @@
 <template>
-    <button
-        class="DailyWeatherCard-button"
+    <Button
+        :variant="ButtonVariant.PRIMARY"
         @click="onDetail"
     >
         Detail
-    </button>
+    </Button>
 </template>
 
 <script setup lang="ts">
     import DailyWeatherCardProps from '~/ui/DailyWeatherCard/DailyWeatherCardProps'
+    import Button from '~/ui/Button/Button.vue'
+    import { ButtonVariant } from '~/ui/Button/ButtonVariant'
 
     defineProps<DailyWeatherCardProps>()
 </script>

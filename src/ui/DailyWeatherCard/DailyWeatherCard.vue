@@ -1,5 +1,5 @@
 <template>
-    <div class="DailyWeatherCard">
+    <div class="DailyWeatherCard border spacing-inset-primary rounded-lg">
         <DailyWeatherCardDate v-bind="$props" />
         <DailyWeatherCardIcon v-bind="$props" />
         <DailyWeatherCardTemperature v-bind="$props" />
