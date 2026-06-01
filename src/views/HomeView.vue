@@ -1,10 +1,7 @@
 <template>
     <main>
         <Floor :variant="FloorVariant.PRIMARY">
-            <h1 class="text-2xl font-bold">
-                Weather Demo
-                <span class="typo-link-large">({{ weatherStore.city }}: {{ weatherStore.temperature }}°C)</span>
-            </h1>
+            <PageHeader />
         </Floor>
         <WeatherTemplate />
     </main>
@@ -14,7 +11,5 @@
     import Floor from '~/ui/Floor/Floor.vue'
     import { FloorVariant } from '~/ui/Floor/FloorVariant'
     import WeatherTemplate from '~/modules/weather/WeatherTemplate.vue'
-    import { useWeatherStore } from '~/modules/weather/stores/useWeatherStore'
-
-    const weatherStore = useWeatherStore()
+    import PageHeader from '~/ui/PageHeader/PageHeader.vue'
 </script>
