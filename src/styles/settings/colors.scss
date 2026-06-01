@@ -1,0 +1,27 @@
+// Surface
+$color-surface: rgb(15 23 42);
+
+// Primary — brand cyan
+$color-primary: rgb(35 173 231);
+$color-primary-light: rgb(197 239 241);
+$color-primary-alpha: rgb(35 173 231 / 20%);
+
+// Secondary — brand green
+$color-secondary: rgb(0 227 150);
+$color-secondary-light: rgb(201 249 233);
+
+// Text
+$color-text: #fff;
+$color-text-muted: rgb(148 163 184);
+$color-text-inverted: #000;
+
+// Border
+$color-border: rgb(100 116 139);
+
+// Accent — highlights, warnings
+$color-accent: #d97706;
+
+// Charts
+$color-chart-temperature: #ef4444;
+$color-chart-apparent: #a78bfa;
+$color-chart-precipitation: #3b82f6;
